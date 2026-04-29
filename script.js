@@ -48,6 +48,9 @@ button.addEventListener("click", function(){
     calculateBPM(height, mileTime);
 
   document.getElementById("result").textContent =
-    `Target BPM: ${bpm}`;
+    `${bpm-5}-${bpm+5} BPM`;
+
+  document.getElementById("cadences").textContent =
+    `candence: ${(bpm*2)-5}-${(bpm*2)+5} steps/min`;
 
 });
