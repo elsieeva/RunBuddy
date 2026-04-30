@@ -1,4 +1,4 @@
-const songs = [
+export const songs = [
   {
     title: "good 4 u",
     artist: "Olivia Rodrigo",

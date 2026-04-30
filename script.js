@@ -1,3 +1,14 @@
+let songs = [];
+
+async function loadSongs() {
+  const response = await fetch("songs.json");
+  songs = await response.json();
+
+  console.log("Songs loaded:", songs.length);
+}
+
+loadSongs();
+
 function convertMileTime(timeString){
 
   const parts = timeString.split(":");
@@ -47,10 +58,41 @@ button.addEventListener("click", function(){
   const bpm =
     calculateBPM(height, mileTime);
 
-  document.getElementById("result").textContent =
-    `${bpm-5}-${bpm+5} BPM`;
+  const selectedGenre = document.getElementById("genreSelect").value;
 
-  document.getElementById("cadences").textContent =
-    `candence: ${(bpm*2)-5}-${(bpm*2)+5} steps/min`;
+  console.log("Selected genre:", selectedGenre);
+
+// filter through songs
+const matchingSongs = songs
+  .filter(song =>
+    song.bpm >= bpm - 5 &&
+    song.bpm <= bpm + 5 &&
+    song.genre === selectedGenre
+  )
+  .sort((a, b) =>
+    Math.abs(a.bpm - bpm) - Math.abs(b.bpm - bpm)
+  )
+  .slice(0, 20);
+
+document.getElementById("result").textContent =
+  `${bpm - 5}-${bpm + 5} BPM`;
+
+console.log(selectedGenre)
+document.getElementById("cadences").textContent =
+  `cadence: ${(bpm * 2) - 5}-${(bpm * 2) + 5} steps/min`;
+
+let songHTML = "";
+
+matchingSongs.forEach(song => {
+  songHTML += `
+    <div class="song">
+      <h3>${song.name}</h3>
+      <p>${song.artist}</p>
+      <span>${Math.round(song.bpm)} BPM</span>
+    </div>
+  `;
+});
+
+songList.innerHTML = songHTML;
 
 });
