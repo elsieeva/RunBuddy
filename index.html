@@ -12,7 +12,6 @@
 </head>
 
 <body>
-  <div class="container">
 
     <!-- LEFT -->
 
@@ -58,66 +57,22 @@
 
     <!-- RIGHT -->
 
-    <div class="right">
+<div class="right">
 
-      <h2 class="playlist-title">
-        Your Run Playlist
-      </h2>
+  <div class="playlist-header">
+    <div class="playlist-title">Your Playlist</div>
+    <div class="bpm" id="result">---</div>
+    <div class="cadence" id="cadences">---</div>
+  </div>
 
-      <div id="result" class="bpm">
-      </div>
-
-      <div id="cadences" class="cadence">
-      </div>
-
-      <div id="songList" class="song-list">
-
-
-        <div class="song">
-
-          <div class="song-left">
-
-            <div class="album"></div>
-
-            <div class="song-info">
-              <h3>Levitating</h3>
-              <p>Dua Lipa</p>
-            </div>
-
-          </div>
-
-          <div class="song-bpm">
-            92 BPM
-          </div>
-
-        </div>
-
-        <div class="song">
-
-          <div class="song-left">
-
-            <div class="album"></div>
-
-            <div class="song-info">
-              <h3>Blinding Lights</h3>
-              <p>The Weeknd</p>
-            </div>
-
-          </div>
-
-          <div class="song-bpm">
-            86 BPM
-          </div>
-
-        </div>
-
-      </div>
-
+  <div id="songList" class="song-list"></div>
       <button class="spotify-btn">
         open in spotify
       </button>
+</div>
 
-    </div>
+
+
     </div>
       <script type="module" src="script.js"></script>
 </body>
