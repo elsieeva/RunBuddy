@@ -190,71 +190,64 @@ body {
   border-radius:20px;
 }
 
-.song{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.song {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  padding:14px 18px;
+  padding: 12px 16px;
+  border-radius: 16px;
 
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  border-radius:20px;
-
-  transition:0.2s ease;
+  transition: 0.2s ease;
 }
 
-.song:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,0.09);
+.song:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.09);
 }
 
-.song-left{
-  display:flex;
-  flex-direction:column;
-
-  flex:1;
-  min-width:0;
+.song-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
 }
 
-.song-info{
-  min-width:0;
+.song-info {
+  min-width: 0;
+  flex: 1;
 }
 
-.song-info h3{
-  font-size:15px;
-  font-weight:600;
-
-  margin-bottom:3px;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.song-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.song-info p{
-  font-size:13px;
-  opacity:0.7;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.song-info p {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.song-bpm{
-  font-size:14px;
-  font-weight:700;
-
-  color:#D3D38F;
-
-  background:rgba(211,211,143,0.12);
-
-  padding:8px 12px;
-
-  border-radius:12px;
-
-  flex-shrink:0;
+.song-bpm {
+  font-size: 13px;
+  font-weight: 700;
+  color: #D3D38F;
+  background: rgba(211, 211, 143, 0.12);
+  padding: 5px 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 .spotify-btn{
   margin-top:30px;

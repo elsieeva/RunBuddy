@@ -82,13 +82,19 @@ document.getElementById("cadences").textContent =
   `cadence: ${(bpm * 2) - 5}-${(bpm * 2) + 5} steps/min`;
 
 let songHTML = "";
-
-matchingSongs.forEach(song => {
+matchingSongs.forEach((song, index) => {
   songHTML += `
     <div class="song">
-      <h3>${song.name}</h3>
-      <p>${song.artist}</p>
-      <span>${Math.round(song.bpm)} BPM</span>
+      <div class="song-left">
+        <span class="song-index">${index + 1}</span>
+        <div class="song-info">
+          <h3>${song.name}</h3>
+          <p>${song.artist}</p>
+        </div>
+      </div>
+      <div class="song-right">
+        <span class="song-bpm">${Math.round(song.bpm)} BPM</span>
+      </div>
     </div>
   `;
 });
